@@ -3,14 +3,7 @@ function copyToClipboard(){
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
-    
-    var tooltip = document.getElementById("myTooltip");
-    tooltip.innerHTML = "Copied: " + copyText.value;
-}
-
-function smallDisplay(){
-    var tooltip = document.getElementById("myTooltip");
-    tooltip.innerHTML = "Copy to clipboard";
+    alert("Password copied to clipboard!");
 }
 
 var password=document.getElementById("output");
