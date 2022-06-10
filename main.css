@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
 * {
   margin: 0;
   padding: 0;
@@ -7,48 +8,80 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
-html,
-body {
-  height: 90%;
+
+html, body {
+  height: 95%;
 }
+
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: center;
-  font-family: "Open Sans", sans-serif;
-  background-color: #35CCCC;
+  font-family: Poppins;
+  background-image: url(img/866-04.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
+
+.main{
+  display: flex;
+  flex-direction: row-reverse;
+	box-shadow: 0px 0px 24px #35CCCC;
+  border-radius: 0.5rem;
+}
+
 .container{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: Poppins;
   background-color: white;
   position: relative;	
 	height: 450px;
-	width: 500px;	
-	box-shadow: 0px 0px 24px #5C5696;
-  border-radius: 0.5rem;
+	width: 450px;	
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
 }
+
+.container2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Poppins;
+  background-color: #35CCCC;
+  position: relative;	
+	height: 450px;
+	width: 400px;	
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+
+.text{
+  color: #fff;
+  font-size: 0.8rem;
+}
+
 label {
   position: relative;
 }
+
 label input {
   font-family: "Open Sans", sans-serif;
   font-size: 1rem;
   color: #040404;
   background: transparent;
   padding: 1rem 1.2rem;
-  min-width: 24rem;
+  min-width: 23rem;
   border-radius: 0.2rem;
   border: 2px solid #35CCCC;
   transition: border-color 0.2s;
 }
+
 label input::selection {
-  background: #35CCCC;
+  background: #FF2C9C;
 }
+
 #icon{
   border: 3px solid #35CCCC;
   border-radius: 50%;
@@ -57,6 +90,7 @@ label input::selection {
 h2{
   color: #35CCCC;
 }
+
 label p {
   color: #040404;
   font-size: 1rem;
@@ -69,17 +103,21 @@ label p {
   background: #fff;
   transition: top 0.2s, font-size 0.2s, color 0.2s;
 }
+
 label input:not(:placeholder-shown) {
   border-color: #35CCCC;
 }
+
 label input:not(:placeholder-shown) + p {
   top: 0;
   font-size: 0.9rem;
   color: #35CCCC;
 }
+
 label input:placeholder-shown + p {
   color: #35CCCC;
 }
+
 #btn1 {
   position: absolute;
   top: 0;
@@ -90,6 +128,7 @@ label input:placeholder-shown + p {
   background: #35CCCC;
   color: #040404;
 }
+
 #btn2 {
   font-family: inherit;
   font-weight: inherit;
@@ -97,22 +136,70 @@ label input:placeholder-shown + p {
   user-select: none;
   margin-top: 1.2rem;
   padding: 1rem 1.2rem;
-  min-width: 24rem;
+  min-width: 23rem;
   border-radius: 0.2rem;
   background: #35CCCC;
   color: #fff;
   transition: opacity 0.2s;
 }
+
 #btn2:hover {
   cursor: pointer;
   opacity: 0.6;
 }
+
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #35CCCC;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  min-width: 23rem;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 65px;
+  height: 65px;
+  border: 0;
+  background: url('img/strong-01.png');
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 65px;
+  height: 65px;
+  border: 0;
+  background: url('img/strong-01.png');
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+#value{
+  color: #35CCCC;
+}
+
+#demo{
+  color: #FF2C9C;
+}
+
 #snackbar {
   visibility: hidden;
   min-width: 250px;
   margin-left: -125px;
-  background-color: white;
-  color: #35CCCC;
+  background-color: #FF2C9C;
+  color: #fff;
   text-align: center;
   border-radius: 2px;
   padding: 16px;
@@ -122,23 +209,28 @@ label input:placeholder-shown + p {
   bottom: 30px;
   font-size: 17px;
 }
+
 #snackbar.show {
   visibility: visible;
   -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
   animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
+
 @-webkit-keyframes fadein {
   from {bottom: 0; opacity: 0;} 
   to {bottom: 30px; opacity: 1;}
 }
+
 @keyframes fadein {
   from {bottom: 0; opacity: 0;}
   to {bottom: 30px; opacity: 1;}
 }
+
 @-webkit-keyframes fadeout {
   from {bottom: 30px; opacity: 1;} 
   to {bottom: 0; opacity: 0;}
 }
+
 @keyframes fadeout {
   from {bottom: 30px; opacity: 1;}
   to {bottom: 0; opacity: 0;}
