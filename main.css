@@ -1,37 +1,145 @@
-.tooltip {
-    position: relative;
-    display: inline-block;
-  }
-  
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 140px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px;
-    position: absolute;
-    z-index: 1;
-    bottom: 150%;
-    left: 50%;
-    margin-left: -75px;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .tooltip .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
-  
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-  }
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+html,
+body {
+  height: 90%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  background-color: #35CCCC;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Open Sans", sans-serif;
+  background-color: white;
+  position: relative;	
+	height: 450px;
+	width: 500px;	
+	box-shadow: 0px 0px 24px #5C5696;
+  border-radius: 0.5rem;
+}
+label {
+  position: relative;
+}
+label input {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  color: #040404;
+  background: transparent;
+  padding: 1rem 1.2rem;
+  min-width: 24rem;
+  border-radius: 0.2rem;
+  border: 2px solid #35CCCC;
+  transition: border-color 0.2s;
+}
+label input::selection {
+  background: #35CCCC;
+}
+#icon{
+  border: 3px solid #35CCCC;
+  border-radius: 50%;
+}
+
+h2{
+  color: #35CCCC;
+}
+label p {
+  color: #040404;
+  font-size: 1rem;
+  user-select: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 0.8rem;
+  padding: 0 0.4rem;
+  background: #fff;
+  transition: top 0.2s, font-size 0.2s, color 0.2s;
+}
+label input:not(:placeholder-shown) {
+  border-color: #35CCCC;
+}
+label input:not(:placeholder-shown) + p {
+  top: 0;
+  font-size: 0.9rem;
+  color: #35CCCC;
+}
+label input:placeholder-shown + p {
+  color: #35CCCC;
+}
+#btn1 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0 ;
+  padding: 0 15px;
+  border: none;
+  background: #35CCCC;
+  color: #040404;
+}
+#btn2 {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 1rem;
+  user-select: none;
+  margin-top: 1.2rem;
+  padding: 1rem 1.2rem;
+  min-width: 24rem;
+  border-radius: 0.2rem;
+  background: #35CCCC;
+  color: #fff;
+  transition: opacity 0.2s;
+}
+#btn2:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+#snackbar {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  background-color: white;
+  color: #35CCCC;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  left: 85%;
+  bottom: 30px;
+  font-size: 17px;
+}
+#snackbar.show {
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
+}
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}

@@ -3,21 +3,17 @@ function copyToClipboard(){
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     document.execCommand("copy");
-    
-    var tooltip = document.getElementById("myTooltip");
-    tooltip.innerHTML = "Copied: " + copyText.value;
+    var x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
 }
 
-function smallDisplay(){
-    var tooltip = document.getElementById("myTooltip");
-    tooltip.innerHTML = "Copy to clipboard";
-}
 
 var password=document.getElementById("output");
 
  function genPass() {
-    var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+[]{};:'|\/<>,.?";
-    var passwordLength = document.getElementById("passLength").value;
+    var chars = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()-_=+[]{};:'~|\/<>,.?";
+    var passwordLength = 20;
     var password = "";
  for (var i = 0; i <= passwordLength; i++) {
    var randomNumber = Math.floor(Math.random() * chars.length);
